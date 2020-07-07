@@ -115,7 +115,7 @@ class SingleProject extends Component {
                                     className='btn btn-primary btn-sm'
                                     onClick={this.handleMarkProjectAsCompleted}
                                 >
-                                    Mark as completed
+                                    <i className="far fa-check-square"></i>  Mark as completed
                                 </button>
 
                                 <hr />
@@ -132,7 +132,7 @@ class SingleProject extends Component {
                                         />
 
                                         <div className='input-group-append'>
-                                            <button className='btn btn-primary'>Add</button>
+                                            <button className='btn btn-success'>Add</button>
                                         </div>
 
                                         {this.renderErrorFor('title')}
@@ -147,15 +147,22 @@ class SingleProject extends Component {
                                         >
                                             {task.title}
 
-                                            <button
+                                            <div>
+											<button
+                                                className='btn btn-warning btn-sm'
+                                            >
+                                               <i className="far fa-edit"></i>
+                                            </button>
+											<button
                                                 className='btn btn-primary btn-sm'
                                                 onClick={this.handleMarkTaskAsCompleted.bind(
                                                     this,
                                                     task.id
                                                 )}
                                             >
-                                                Mark as completed
+                                               <i className="fas fa-check"></i> Done
                                             </button>
+											</div>
                                         </li>
                                     ))}
 
